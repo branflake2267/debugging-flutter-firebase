@@ -3,7 +3,7 @@ Debugging and deploying a Flutter web app to Firebase
 
 [![Build Status](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine.svg?branch=master)](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine)
 
-[![Debugging Video Tutorial](https://img.youtube.com/vi/lrUrE8F2lNw/0.jpg)](https://www.youtube.com/watch?v=lrUrE8F2lNw)
+[![Debugging Video Tutorial](https://img.youtube.com/vi/xxxx/0.jpg)](https://www.youtube.com/watch?v=xxxxx)
  
 
 ## Project Configuration 
@@ -19,7 +19,7 @@ Debugging and deploying a Flutter web app to Firebase
 | CI | Travis CI |
 | Hosting | App Engine Flex |
 | License | GPL v3 |
-| Tutorial | [Youtube Tutorial](https://youtu.be/lrUrE8F2lNw) |
+| Tutorial | [Youtube Tutorial](https://youtu.be/xxxxx) |
 
 
 ## Debugging
