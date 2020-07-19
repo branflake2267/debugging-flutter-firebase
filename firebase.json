@@ -5,12 +5,16 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "client/**"
+      "client/**",
+      ".vscode",
+      ".gitignore",
+      ".travis.yml",
+      "README.md"
     ],
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "server/html/index.html"
       }
     ]
   }

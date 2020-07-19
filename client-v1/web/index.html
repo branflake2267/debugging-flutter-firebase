@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="client">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+  <title>client</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+  <!-- Firebase Credentials -->
+  <script>
+    // Guide: https://firebase.flutter.dev/docs/installation/web
+    // settings; https://console.firebase.google.com/project/donnelson-sandbox/settings/general/web:MmU0NDI5MzItZmEwNy00NGJjLTkwZDQtZTk1MTE4OTQ0OTI3
+    const firebaseConfig = {
+      apiKey: "AIzaSyBVEBAu2Pm031x6KWrnMPbb1hGCrKlMmrY",
+      authDomain: "donnelson-sandbox.firebaseapp.com",
+      databaseURL: "https://donnelson-sandbox.firebaseio.com",
+      projectId: "donnelson-sandbox",
+      storageBucket: "donnelson-sandbox.appspot.com",
+      messagingSenderId: "249156360314",
+      appId: "1:249156360314:web:7e59d0a36a9f01795c43c3",
+      measurementId: "G-PW1N17XT2E"
+    };
+    // Initialize Firebase
+    var app = firebase.initializeApp(firebaseConfig);
+    console.log('firebase app=', app);
+  </script>
+  
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>

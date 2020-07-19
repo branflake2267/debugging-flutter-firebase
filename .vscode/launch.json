@@ -2,24 +2,23 @@
   "version": "0.2.0",
   "configurations": [
 
-    {
-      "name": "Launch Flutter Web App (DEV)",
-      "request": "launch",
-      "type": "dart",
-      "program": "client/lib/main_dev.dart",
-      "args": [
-        "-d", "chrome"
-      ]
-    },
 
     {
-      "name": "Launch Flutter Web App (PROD)",
+      "name": "Launch Flutter - Web App",
       "request": "launch",
       "type": "dart",
       "program": "client/lib/main.dart",
       "args": [
         "-d", "chrome"
       ]
+    },
+
+    {
+      "name": "Launch Flutter - Phone",
+      "request": "launch",
+      "type": "dart",
+      "program": "client/lib/main.dart",
     }
+
   ]
 }
