@@ -10,12 +10,6 @@
       ".gitignore",
       ".travis.yml",
       "README.md"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "server/html/index.html"
-      }
     ]
   }
 }
