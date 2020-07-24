@@ -1,5 +1,4 @@
-# Debugging and Deploying a Flutter Web App to Firebase
-Debugging and deploying a Flutter web app to Firebase
+# Debugging and Deploying a Flutter Web and Mobile App with Firebase
 
 [![Build Status](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine.svg?branch=master)](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine)
 
@@ -9,15 +8,15 @@ Debugging and deploying a Flutter web app to Firebase
 ## Project Configuration 
 | Setting | Value |
 | --- | --- |
-| Purpose | Debugging Flutter web app with dart web server hosted on App Engine |
-| Client | Flutter web app |
-| Server | Dart http web server |
+| Purpose | Debugging and deploying a Flutter web app to Firebase. Fetching data from Firebase. Debugging on Android. |
+| Client | Flutter web app, Android/iOS mobiel app |
+| Server | Firebase|
 | Client Language | Dart |
-| Server Language | Dart |
+| Server Language | Firebase |
 | Architecture | Flutter/Dart |
 | IDE | Visual Studio Code |
 | CI | Travis CI |
-| Hosting | App Engine Flex |
+| Hosting | Firebase |
 | License | GPL v3 |
 | Tutorial | [Youtube Tutorial](https://youtu.be/xxxxx) |
 
@@ -32,13 +31,11 @@ Debugging and deploying a Flutter web app to Firebase
 
 ### Debugging with VS Code
 
-* Use the VS Code Launcher `1. Launch Server`
-* Use the VS Code Launcher `2. Launch Flutter Web App`
+**Web App**
+* Use the VS Code Launcher `Launch Flutter - Web`
 
-#### VS Code Endpoints
-
-* http://localhost:54432/#/ - client 
-
+**Mobile App**
+* Use the VS Code Launcher `Launch Flutter - Phone`
 
 
 
@@ -48,19 +45,29 @@ Debugging and deploying a Flutter web app to Firebase
 The [dart tools](https://dart.dev/get-dart) are required to use this project. 
 
 ### Install VS Code Dart Plugin
-Install the Dart VS Code plugin. 
+Install the Dart VS Code plugin. And configure the launchers.
 
-Add the program launcher, to launch the web server.
 ```
 {
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Web Server",
-      "program": "lib/server.dart",
+      "name": "Launch Flutter - Web",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "program": "client/lib/main.dart",
+      "args": [
+        "-d", "chrome"
+      ]
+    },
+
+    {
+      "name": "Launch Flutter - Phone",
+      "request": "launch",
+      "type": "dart",
+      "program": "client/lib/main.dart",
     }
+
   ]
 }
 ```

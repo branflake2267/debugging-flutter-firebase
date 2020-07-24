@@ -4,7 +4,7 @@
 
 
     {
-      "name": "Launch Flutter - Web App",
+      "name": "Launch Flutter - Web",
       "request": "launch",
       "type": "dart",
       "program": "client/lib/main.dart",

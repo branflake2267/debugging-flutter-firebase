@@ -3,9 +3,6 @@ language: dart
 dart:
   - stable
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_fcd3721d6cbf_key -iv $encrypted_fcd3721d6cbf_iv -in donnelson-sandbox-flex-c774ac1c9428.json.enc -out ./donnelson-sandbox-flex-c774ac1c9428.json -d
-
 before_script:
   # https://flutter.dev/docs/get-started/web
   - git clone https://github.com/flutter/flutter.git -b beta
@@ -15,25 +12,23 @@ before_script:
   - flutter doctor
 
 script:
-  - sh ./build.sh
-  # Debug
-  - pwd
-  - ls -la
-  # Clean up
-  # Remove unused directories, the ./dist directory houses it now
+  - cd client
+  - flutter build web
+  - cd ..
+  - cp -R ./client/build/web/* ./public
+
+after_script:
   - rm -rf ./client
-  - rm -rf ./server
-  - rm -rf ./flutter
+  - rm -rf ./.vscode
 
 # Deploy configuration
-# https://docs.travis-ci.com/user/deployment-v2 - configuration reference
-# https://cloud.google.com/docs/authentication/getting-started#cloud-console - generate secret key
+# Use the Flutter console to configure your web app. 
+# https://docs.travis-ci.com/user/deployment/firebase/
 deploy:
-  edge: true
-  provider: gae
-  keyfile: "./donnelson-sandbox-flex-c774ac1c9428.json"
-  project: "donnelson-sandbox-flex"
-  skip_cleanup: true
+  provider: firebase
+  token:
+    secure: "CugRCg8BvJmQ3q5n/ooQi4agWn94dBHFmEZr7mlzSnyxUK5uFY6WcDNDG4RMz+LJ3dmK9TQflv1QeSYx0/CZXWhuBVQu3Rv9W7GFHE19Ek9pxUPraoaH1Pi5YB/w6ufgBAHREgVR74iknqp40Zpb13QV+uD1YIj4bncrBkL1fhB2AFTEBRZXW7KBOPhhVnhflErVhB9xGQZ9bt6+gHvepOVW56WSi6ZcPncStx1vfSC8ktJp8EUQvCdEdEfodZ8IEW+ICILZrqkr3e44ezR2Zjb+B9c2akDPZL3GAUGXZJfaxDQ96X9PgIQ1Cm5W/a9rcwJpXiKQeP2LNJuXASMwL9g0DAqsDdL6Cgh79CbyE42N7VRTMYplSrO2FWMPaBC5K/BICzyH9VGMlqsg7Pes+/11JtJRj1PnCE4XzJHMJ/3mbIx/iUvAspvew+ck5RYczlxe7A4RQqlzNjgbVnFnXrikeVCsUgYESiWNmCNlEet4prkfhWEOTrIfyuWVeh/Q7k2EgcE//Kz0OWdcnPWnj2DJZntjl9F0vmFL5AEAl1scEaeVLQNpaJXa7vrsNZV0Xxe1Og53PCRdXOo8o+j4Et6OU4bfh60iqLNQ3inmW8CJ/WjwBimbF5FQF9JyPo/DQnWaeTTIW+z3Z5DKgzrLHxUN2mxiOyEQI/DOVkqzGYk="
+  project: "donnelson-sandbox"
 
 
     
@@ -44,8 +39,14 @@ deploy:
 # travis cache --com
 # travis cache --com --delete
 
+# Firebase tools
+# https://github.com/firebase/firebase-tools#installation - Use this to get your token($FIREBASE_TOKEN)
+
 # Encrypt Secure Variables
 # gem install travis
 # travis login --github-token replace_with_github_personal_token
 # cd to/this/repo
-# travis encrypt-file donnelson-sandbox-c04a93dbca2b.json
+# travis encrypt "$FIREBASE_TOKEN"  
+
+# Deploy
+# firebase deploy --token "$FIREBASE_TOKEN"
