@@ -16,10 +16,12 @@ script:
   - flutter build web
   - cd ..
   - cp -R ./client/build/web/* ./public
-
-after_script:
+  - echo "clean up before"
   - rm -rf ./client
   - rm -rf ./.vscode
+  - ls -la ./public
+
+
 
 # Deploy configuration
 # Use the Flutter console to configure your web app. 
