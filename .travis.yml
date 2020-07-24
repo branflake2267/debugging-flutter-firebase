@@ -16,10 +16,11 @@ script:
   - flutter build web
   - cd ..
   - cp -R ./client/build/web/* ./public
-  - echo "clean up before"
+  - echo "clean up files that aren't used in hosting"
   - rm -rf ./client
   - rm -rf ./.vscode
   - ls -la ./public
+  - git commit -a
 
 
 
@@ -52,3 +53,5 @@ deploy:
 
 # Deploy
 # firebase deploy --token "$FIREBASE_TOKEN"
+
+
