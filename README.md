@@ -1,6 +1,6 @@
 # Debugging and Deploying a Flutter Web and Mobile App with Firebase
 
-[![Build Status](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine.svg?branch=master)](https://travis-ci.org/branflake2267/debugging-flutter-web-dartwebserver-appengine)
+[![Build Status](https://travis-ci.org/branflake2267/debugging-flutter-firebase.svg?branch=master)](https://travis-ci.org/branflake2267/debugging-flutter-firebase)
 
 [![Debugging Video Tutorial](https://img.youtube.com/vi/xxxx/0.jpg)](https://www.youtube.com/watch?v=xxxxx)
  
