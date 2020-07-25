@@ -20,7 +20,7 @@ script:
   - rm -rf ./client
   - rm -rf ./.vscode
   - ls -la ./public
-  - git commit -a
+  - git add -A
 
 
 
