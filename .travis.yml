@@ -3,8 +3,9 @@ language: dart
 dart:
   - stable
 
-before_script:
+install:
   # https://flutter.dev/docs/get-started/web
+  - echo "Configure Flutter"
   - git clone https://github.com/flutter/flutter.git -b beta
   - export PATH="$PATH:`pwd`/flutter/bin"
   - flutter upgrade
@@ -12,17 +13,17 @@ before_script:
   - flutter doctor
 
 script:
+  - echo "Building..."
   - cd client
   - flutter build web
   - cd ..
   - cp -R ./client/build/web/* ./public
-  - echo "clean up files that aren't used in hosting"
+  
+before_deploy:
+  - echo "Clean up files that aren't used in hosting"
   - rm -rf ./client
   - rm -rf ./.vscode
   - ls -la ./public
-  - git add -A
-
-
 
 # Deploy configuration
 # Use the Flutter console to configure your web app. 
@@ -32,6 +33,8 @@ deploy:
   token:
     secure: "CugRCg8BvJmQ3q5n/ooQi4agWn94dBHFmEZr7mlzSnyxUK5uFY6WcDNDG4RMz+LJ3dmK9TQflv1QeSYx0/CZXWhuBVQu3Rv9W7GFHE19Ek9pxUPraoaH1Pi5YB/w6ufgBAHREgVR74iknqp40Zpb13QV+uD1YIj4bncrBkL1fhB2AFTEBRZXW7KBOPhhVnhflErVhB9xGQZ9bt6+gHvepOVW56WSi6ZcPncStx1vfSC8ktJp8EUQvCdEdEfodZ8IEW+ICILZrqkr3e44ezR2Zjb+B9c2akDPZL3GAUGXZJfaxDQ96X9PgIQ1Cm5W/a9rcwJpXiKQeP2LNJuXASMwL9g0DAqsDdL6Cgh79CbyE42N7VRTMYplSrO2FWMPaBC5K/BICzyH9VGMlqsg7Pes+/11JtJRj1PnCE4XzJHMJ/3mbIx/iUvAspvew+ck5RYczlxe7A4RQqlzNjgbVnFnXrikeVCsUgYESiWNmCNlEet4prkfhWEOTrIfyuWVeh/Q7k2EgcE//Kz0OWdcnPWnj2DJZntjl9F0vmFL5AEAl1scEaeVLQNpaJXa7vrsNZV0Xxe1Og53PCRdXOo8o+j4Et6OU4bfh60iqLNQ3inmW8CJ/WjwBimbF5FQF9JyPo/DQnWaeTTIW+z3Z5DKgzrLHxUN2mxiOyEQI/DOVkqzGYk="
   project: "donnelson-sandbox"
+  skip_cleanup: true
+
 
 
     
