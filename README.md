@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/branflake2267/debugging-flutter-firebase.svg?branch=master)](https://travis-ci.org/branflake2267/debugging-flutter-firebase)
 
-[![Debugging Video Tutorial](https://img.youtube.com/vi/xxxx/0.jpg)](https://www.youtube.com/watch?v=xxxxx)
+[![Debugging Video Tutorial](https://img.youtube.com/vi/fJH797Oj4kw/0.jpg)](https://www.youtube.com/watch?v=fJH797Oj4kw)
  
 
 ## Project Configuration 
@@ -18,7 +18,7 @@
 | CI | Travis CI |
 | Hosting | Firebase |
 | License | GPL v3 |
-| Tutorial | [Youtube Tutorial](https://youtu.be/xxxxx) |
+| Tutorial | [Youtube Tutorial](https://youtu.be/fJH797Oj4kw) |
 
 
 ## Debugging
